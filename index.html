@@ -9,65 +9,44 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
   <style>
     body {
-      margin: 0;
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       background: linear-gradient(to right, #081c24, #12343b);
       color: #f1f1f1;
+      margin: 0;
+      padding-top: 70px;
     }
 
-    .sidebar {
-      background-color: #0d1a26;
-      padding-top: 20px;
-      height: 100%;
+    nav {
+      background-color: #0d1a26 !important;
     }
 
-    .sidebar a {
-      padding: 15px 20px;
-      text-decoration: none;
-      font-size: 18px;
-      color: #00ffff;
-      display: block;
-      transition: 0.3s;
+    .nav-link {
+      color: #00ffff !important;
+      font-weight: 500;
     }
 
-    .sidebar a:hover {
-      background-color: #12343b;
-      color: #00ffff;
-    }
-
-    .main {
-      margin-left: 0;
-      padding: 20px;
-      transition: 0.3s;
+    .nav-link:hover {
+      color: #66ffff !important;
     }
 
     .profile-img {
-      width: 200px;
-      height: 200px;
+      width: 180px;
+      height: 180px;
       border-radius: 50%;
       animation: pulse 3s infinite;
-      border: 5px solid #00ffff;
+      border: 4px solid #00ffff;
       display: block;
-      margin-left: auto;
-      margin-right: auto;
+      margin: auto;
     }
 
     @keyframes pulse {
-      0% {
-        transform: scale(1);
-      }
-
-      50% {
-        transform: scale(1.05);
-      }
-
-      100% {
-        transform: scale(1);
-      }
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
     }
 
     .section-title {
-      font-size: 2rem;
+      font-size: 1.8rem;
       color: #00ffff;
       border-bottom: 2px solid #00ffff;
       margin-bottom: 20px;
@@ -76,20 +55,23 @@
     .project-card {
       background: #1a2a33;
       border: 1px solid #00ffff;
-      border-radius: 10px;
-      padding: 15px;
+      border-radius: 8px;
+      padding: 10px;
       margin-bottom: 20px;
       transition: transform 0.3s;
+      font-size: 0.95rem;
     }
 
     .project-card:hover {
       transform: scale(1.02);
-      box-shadow: 0 0 15px #00ffff;
+      box-shadow: 0 0 12px #00ffff;
     }
 
     .project-img {
       width: 100%;
       border-radius: 5px;
+      height: 160px;
+      object-fit: cover;
     }
 
     .social-icons a {
@@ -107,56 +89,66 @@
       text-decoration: none;
     }
 
-    @media (min-width: 768px) {
-      .offcanvas-start {
-        position: static;
-        transform: none !important;
-        visibility: visible !important;
-      }
+    .contact-info i {
+      margin-right: 8px;
+    }
 
-      .main {
-        margin-left: 250px;
+    .film-card {
+      background: #1a2a33;
+      border: 1px solid #00ffff;
+      border-radius: 8px;
+      padding: 10px;
+      margin-top: 10px;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 768px) {
+      .project-img {
+        height: 140px;
       }
     }
   </style>
 </head>
 
 <body>
-  <!-- Toggle button for small screens -->
-  <button class="btn btn-dark d-md-none m-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSidebar">
-    <i class="bi bi-list"></i>
-  </button>
-
-  <!-- Sidebar -->
-  <div class="offcanvas offcanvas-start sidebar" tabindex="-1" id="offcanvasSidebar">
-    <div class="offcanvas-header d-md-none">
-      <h5 class="text-light">Menu</h5>
-      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand text-info" href="#">Farhan Sadik Fahim</a>
+      <button class="navbar-toggler bg-info" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon text-dark"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto me-3">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experience">Work Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#music">Music & Film</a></li>
+          <li class="nav-item"><a class="nav-link" href="#info">Info</a></li>
+        </ul>
+      </div>
     </div>
-    <div class="offcanvas-body p-0">
-      <a href="#home"><i class="bi bi-house-door"></i> Home</a>
-      <a href="#experience"><i class="bi bi-briefcase"></i> Work Experience</a>
-      <a href="#projects"><i class="bi bi-cpu"></i> Projects</a>
-      <a href="#music"><i class="bi bi-music-note-beamed"></i> Music & Film</a>
-      <a href="#info"><i class="bi bi-info-circle"></i> Info</a>
-    </div>
-  </div>
+  </nav>
 
-  <!-- Main content -->
-  <div class="main">
-    <section id="home">
-      <img src="Farhim.jpg" alt="Farhan Sadik Fahim" class="profile-img" />
-      <h1 class="text-center mt-3">Farhan Sadik Fahim</h1>
-      <p class="text-center">IoT Developer | Firmware Engineer | Music Composer</p>
-      <p class="text-center">I am deeply passionate about IoT and have demonstrated my interest through numerous IoT-based projects. With a solid foundation in electronics devices, programming, and logic building, I am enthusiastic about creating innovative solutions. My goal is to leverage my skills and knowledge to contribute to the development of cutting-edge IoT solutions, driving advancements in technology and making a meaningful impact in the field.</p>
+  <!-- Main Content -->
+  <div class="container">
+    <section id="home" class="text-center mb-5">
+      <img src="Farhim.jpg" alt="Farhan Sadik Fahim" class="profile-img mt-4" />
+      <h1 class="mt-3">Farhan Sadik Fahim</h1>
+      <p>IoT Developer | Firmware Engineer | Music Composer</p>
+      <p class="mt-3">
+        I am deeply passionate about IoT and have demonstrated my interest through numerous IoT-based projects.
+        With a solid foundation in electronics devices, programming, and logic building, I am enthusiastic about creating innovative solutions.
+        My goal is to leverage my skills and knowledge to contribute to the development of cutting-edge IoT solutions, driving advancements in technology and making a meaningful impact in the field.
+      </p>
     </section>
 
     <section id="experience">
       <h2 class="section-title">Work Experience</h2>
       <p><strong>Firmware Engineer</strong> – Datasoft Manufacturing & Assembly Inc. Ltd<br />
         Responsibilities: Embedded firmware development for IoT and automation devices, including communication protocol integration,
-        system debugging, and production-ready firmware optimization.</p>
-
+        system debugging, and production-ready firmware optimization.
+      </p>
       <p><strong>Student Associate</strong> – DIU IoT Lab<br />
         Responsibilities: IoT solution development, prototype deployment, and publication contributions.</p>
     </section>
@@ -164,67 +156,84 @@
     <section id="projects">
       <h2 class="section-title">Projects</h2>
       <div class="row">
-        <div class="col-md-6">
+        <!-- Repeatable Project Template -->
+        <div class="col-md-4">
           <div class="project-card">
-            <img src="project1.jpg" class="project-img" alt="Smart Railway Crossing System" />
-            <h5 class="mt-3">Smart Railway Crossing System (SRCS)</h5>
-            <p>An IoT-powered safety system designed to prevent accidents at unmanned railway crossings by detecting train approach and automating barrier control.</p>
+            <img src="project1.jpg" class="project-img" alt="SRCS" />
+            <h5 class="mt-2">Smart Railway Crossing System (SRCS)</h5>
+            <p>Prevents accidents at railway crossings by detecting train approach and automating barriers using IoT sensors.</p>
           </div>
         </div>
-        <div class="col-md-6">
+
+        <div class="col-md-4">
           <div class="project-card">
-            <img src="project2.jpg" class="project-img" alt="IoT based Individual Water Billing System" />
-            <h5 class="mt-3">IoT based Individual Water Billing System</h5>
-            <p>A smart billing solution using IoT sensors to monitor and charge water usage individually in residential setups for better resource management.</p>
+            <img src="project2.jpg" class="project-img" alt="Water Billing" />
+            <h5 class="mt-2">Individual Water Billing System</h5>
+            <p>IoT billing solution for monitoring water usage in residential areas with real-time analytics and fair billing.</p>
           </div>
         </div>
-        <div class="col-md-6">
+
+        <div class="col-md-4">
           <div class="project-card">
-            <img src="project3.jpg" class="project-img" alt="More Chicken (DMA)" />
-            <h5 class="mt-3">More Chicken (DMA)</h5>
-            <p>A project focused on automating poultry farm management by monitoring environmental parameters and optimizing conditions for better productivity.</p>
+            <img src="project3.jpg" class="project-img" alt="More Chicken" />
+            <h5 class="mt-2">More Chicken (DMA)</h5>
+            <p>Automates poultry farming by monitoring climate and optimizing conditions for better yield and efficiency.</p>
           </div>
         </div>
-        <div class="col-md-6">
+
+        <div class="col-md-4">
           <div class="project-card">
-            <img src="project4.jpg" class="project-img" alt="AMR (DMA)" />
-            <h5 class="mt-3">AMR (DMA)</h5>
-            <p>Automatic Meter Reading (AMR) system developed for remote data collection from utility meters, enhancing efficiency and accuracy.</p>
+            <img src="project4.jpg" class="project-img" alt="AMR DMA" />
+            <h5 class="mt-2">AMR (DMA)</h5>
+            <p>Automated meter reading system for utility usage tracking and remote data collection.</p>
           </div>
         </div>
-        <div class="col-md-6">
+
+        <div class="col-md-4">
           <div class="project-card">
-            <img src="project5.jpg" class="project-img" alt="Student Bus Tracking System" />
-            <h5 class="mt-3">Student Bus Tracking System</h5>
-            <p>An IoT-based solution enabling parents to track the location of their children on school buses in real-time for safety assurance.</p>
+            <img src="project5.jpg" class="project-img" alt="Student Bus Tracker" />
+            <h5 class="mt-2">Student Bus Tracking System</h5>
+            <p>Tracks school buses in real-time, allowing parents to monitor their child's location for safety.</p>
           </div>
         </div>
-        <div class="col-md-6">
+
+        <div class="col-md-4">
           <div class="project-card">
-            <img src="project7.jpg" class="project-img" alt="QR based Metro Ticketing System" />
-            <h5 class="mt-3">QR based Metro Ticketing System</h5>
-            <p>An innovative ticketing system leveraging QR codes for seamless, cashless access to metro transport.</p>
+            <img src="project6.jpg" class="project-img" alt="Smart Home" />
+            <h5 class="mt-2">Smart Home System</h5>
+            <p>IoT-enabled home automation with control over lighting, security, and appliances via mobile app.</p>
           </div>
         </div>
-        <div class="col-md-6">
+
+        <div class="col-md-4">
           <div class="project-card">
-            <img src="project8.jpg" class="project-img" alt="Smart Irrigation System" />
-            <h5 class="mt-3">Smart Irrigation System</h5>
-            <p>IoT-based irrigation that optimizes water usage in agriculture by monitoring soil moisture and weather data.</p>
+            <img src="project7.jpg" class="project-img" alt="QR Metro" />
+            <h5 class="mt-2">QR based Metro Ticketing System</h5>
+            <p>Contactless ticketing system using QR codes for easy and secure metro access.</p>
           </div>
         </div>
-        <div class="col-md-6">
+
+        <div class="col-md-4">
           <div class="project-card">
-            <img src="project9.jpg" class="project-img" alt="IoT based Water Vending Machine" />
-            <h5 class="mt-3">IoT based Water Vending Machine</h5>
-            <p>A smart vending machine project that automates water dispensing and monitors stock levels remotely.</p>
+            <img src="project8.jpg" class="project-img" alt="Irrigation" />
+            <h5 class="mt-2">Smart Irrigation System</h5>
+            <p>Soil moisture and weather-based irrigation for agriculture to reduce water waste and increase efficiency.</p>
           </div>
         </div>
-        <div class="col-md-6">
+
+        <div class="col-md-4">
           <div class="project-card">
-            <img src="project10.jpg" class="project-img" alt="IoT based Smart Classroom" />
-            <h5 class="mt-3">IoT based Smart Classroom</h5>
-            <p>A connected classroom system integrating IoT devices for smart attendance, environment control, and interactive learning.</p>
+            <img src="project9.jpg" class="project-img" alt="Water Vending" />
+            <h5 class="mt-2">IoT Water Vending Machine</h5>
+            <p>Automated water vending with smart monitoring of levels and refill alerts.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="project-card">
+            <img src="project10.jpg" class="project-img" alt="Smart Classroom" />
+            <h5 class="mt-2">IoT Smart Classroom</h5>
+            <p>Integrates smart attendance, environmental controls, and interactive tools for modern education.</p>
           </div>
         </div>
       </div>
@@ -232,26 +241,31 @@
 
     <section id="music">
       <h2 class="section-title">Music & Film</h2>
-      <p>Farhan Sadik Fahim is a Bangladeshi music composer and filmmaker. His aim in life is to make authentic music and films that reflect the real and rural life of the people of Bangladesh.</p>
+      <p>I'm also a Bangladeshi music composer and filmmaker. My goal is to produce authentic music and films that portray the real and rural life of Bangladesh.</p>
       <div class="social-icons">
         <a href="https://www.youtube.com/@farhansadikfahim" target="_blank"><i class="bi bi-youtube"></i></a>
         <a href="https://open.spotify.com/artist/4w0izvfNKSujxLWReNcdBJ" target="_blank"><i class="bi bi-spotify"></i></a>
         <a href="https://www.facebook.com/farhansadikfahim03/" target="_blank"><i class="bi bi-facebook"></i></a>
       </div>
-      <div class="col-md-6">
+
+      <div class="col-md-4">
         <div class="project-card">
-          <img src="film.jpg" class="project-img" alt="Samapan Kabbo" />
-          <h5 class="mt-3">Samapan Kabbo - The Conclude Poem (2021)</h5>
-          <p>This is a story of an apathetic poet. He lives a rural life. Different people come to the poet and tell their stories of happiness and sorrow. The poet tries to find poetic rhythm in their stories.</p>
+        <img src="film.jpg" class="project-img mb-2" alt="Film" />
+        <h5>Samapan Kabbo - The Conclude Poem (2021)</h5>
+        <p>This is a story of an apathetic poet living a rural life. People come to him with tales of joy and sorrow, which he tries to turn into poetic rhythm.</p>
+        <p><a href="https://filmfreeway.com/FarhanSadikFahim" target="_blank">View on FilmFreeway</a></p>
         </div>
       </div>
-      <p><strong>Film:</strong> <em>Samapan Kabbo - The Conclude Poem (2021)</em>, Feature, Short, Student, Other. <a href="https://filmfreeway.com/FarhanSadikFahim" target="_blank">View on FilmFreeway</a></p>
+
+        
     </section>
 
-    <section id="info">
+    <section id="info" class="mt-5">
       <h2 class="section-title">Info</h2>
-      <p><i class="bi bi-envelope"></i> Email: <a href="mailto:ffarhanssadil@gmail.com">ffarhanssadil@gmail.com</a></p>
-      <p><i class="bi bi-telephone"></i> Phone: 01718118092</p>
+      <div class="contact-info">
+        <p><i class="bi bi-envelope"></i> Email: <a href="mailto:ffarhanssadil@gmail.com">ffarhanssadil@gmail.com</a></p>
+        <p><i class="bi bi-telephone"></i> Phone: 01718118092</p>
+      </div>
     </section>
   </div>
 
